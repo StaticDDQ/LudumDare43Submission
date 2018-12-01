@@ -5,7 +5,7 @@ public class ExplosionEffect : MonoBehaviour {
     [SerializeField] private float lingerTime = 0.5f;
     [SerializeField] private float maxRange = 5f;
     [SerializeField] private float explodeSpeed = 2f;
-    [SerializeField] private float damage = 10f;
+    [SerializeField] private float damage = 40f;
     private SpriteRenderer sr;
     private Vector2 maxExplodeRadius;
 

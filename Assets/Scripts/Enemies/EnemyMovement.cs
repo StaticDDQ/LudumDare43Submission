@@ -38,6 +38,7 @@ public class EnemyMovement : MonoBehaviour {
     protected IEnumerator Explode()
     {
         GetComponent<Animator>().Play("explodeAnimEnemy");
+        Instantiate(explodeEffect, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114285591849338912}
   - component: {fileID: 50875557627681510}
   - component: {fileID: 60708053099988632}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: enemyShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198615f9e5a75824197dc896b747bd52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 4853545802543854, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
+  hitDamage: 10
   speed: 4
   rotSpeed: 100
 --- !u!114 &114447218546281246
@@ -240,6 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3704d7fd22ece61499ae22cad4a07205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explodeEffect: {fileID: 1462214932975440, guid: a94ad596439831b45b06d9cb17007895,
+    type: 2}
   shootInterval: 1
   maxHealth: 20
 --- !u!212 &212867246149806302

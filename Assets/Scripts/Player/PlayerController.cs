@@ -50,14 +50,6 @@ public class PlayerController : MonoBehaviour {
         rigid.AddForce(dir, ForceMode2D.Force);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.transform.tag == "enemy")
-        {
-            TakeDamage(10f);
-        }
-    }
-
     public void TakeDamage(float amount)
     {
         if (!isInvulnerable)

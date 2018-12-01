@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a738b74ae691e004cbf1df0621e66be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explodeEffect: {fileID: 0}
   shootInterval: 1
   maxHealth: 20
   shoot1: {fileID: 114244303742107544}
