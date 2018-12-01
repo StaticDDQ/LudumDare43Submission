@@ -62,10 +62,10 @@ public class PlayerController : MonoBehaviour {
     private IEnumerator Invulnerable(float dur)
     {
         isInvulnerable = true;
-        transform.tag = "Invulnerable";
+        gameObject.layer = 12;
         GetComponent<Animator>().Play("invulnerableState");
         yield return new WaitForSeconds(dur);
-        transform.tag = "Player";
+        gameObject.layer = 8;
         isInvulnerable = false;
     }
 
