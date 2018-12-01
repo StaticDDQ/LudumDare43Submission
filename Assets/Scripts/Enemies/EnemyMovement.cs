@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
+    [SerializeField] protected GameObject explodeEffect;
     [SerializeField] protected float shootInterval = 1f;
 	[SerializeField] protected float maxHealth = 20f;
     protected bool canShoot = true;

@@ -1,20 +1,16 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D))]
 public class EnemyBomb : MonoBehaviour {
 
-    [SerializeField] private float damage = 10f;
     [SerializeField] private float timer = 5f;
-    [SerializeField] private float maxRange = 5f;
-    [SerializeField] private float explodeSpeed = 2f;
-    [SerializeField] private Transform explodeSprite;
-    private Vector2 maxExplodeRadius;
-    private CircleCollider2D c;
+    [SerializeField] private GameObject explosion;
+    [SerializeField] private Color minColor;
+    [SerializeField] private Color maxColor;
+    private SpriteRenderer sr;
 
     private void Start()
     {
-        c = GetComponent<CircleCollider2D>();
-        maxExplodeRadius = Vector2.one * maxRange;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -22,18 +18,19 @@ public class EnemyBomb : MonoBehaviour {
         if(timer > 0)
         {
             timer -= Time.deltaTime;
-        } else
-        {
-            c.radius = Mathf.Lerp(0, maxRange, Time.deltaTime * explodeSpeed);
-            explodeSprite.localScale = Vector2.Lerp(Vector2.zero, maxExplodeRadius, Time.deltaTime * explodeSpeed);
-        }
-    }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
+            if (timer < 2)
+            {
+                sr.color = Color.Lerp(sr.color, maxColor, Time.deltaTime * 5f);
+            } else
+            {
+                sr.color = Color.Lerp(minColor, maxColor, Mathf.PingPong(Time.time, 1));
+            }
+        }
+        else
         {
-            collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }
