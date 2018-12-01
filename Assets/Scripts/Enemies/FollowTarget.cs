@@ -3,7 +3,7 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class FollowTarget : MonoBehaviour {
 
-    private Transform target;
+    [SerializeField] private Transform target;
 
     [SerializeField] private float speed = 2f;
     [SerializeField] private float rotSpeed = 2f;
@@ -25,6 +25,12 @@ public class FollowTarget : MonoBehaviour {
 
         rb.velocity = transform.up * speed;
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "Wall")
+            transform.rotation = Quaternion.LookRotation(transform.forward, target.position - transform.position);
+    }
 
     public void SetTarget(Transform newTarget)
     {

@@ -4,15 +4,16 @@ using System.Collections;
 public class Mini : SubGrade {
 
     private Transform player;
-    private Vector3 miniSize;
-    private Vector3 regSize;
-    private bool isUsing = false;
+    private Vector2 miniSize;
+    private Vector2 regSize;
+    private bool isUsing;
 
     public override void GainAbility()
     {
         player = transform.parent;
-        miniSize = new Vector3(player.localScale.x * 0.3f, player.localScale.y * 0.3f, player.localScale.z * 0.3f);
+        miniSize = player.localScale * 0.3f;
         regSize = player.localScale;
+        isUsing = false;
     }
 
     public override void RemoveAbility()
@@ -20,7 +21,7 @@ public class Mini : SubGrade {
         StopAllCoroutines();
         player.localScale = regSize;
 
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public override void UseAbility()
@@ -33,19 +34,22 @@ public class Mini : SubGrade {
     {
         isUsing = true;
         float elapsedTime = 0.0f;
+        Vector2 startScale = player.localScale;
+
         while(elapsedTime < dur)
         {
-            player.localScale = Vector3.Lerp(player.localScale, miniSize, elapsedTime/dur);
+            player.localScale = Vector2.Lerp(startScale, miniSize, elapsedTime / dur);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         yield return new WaitForSeconds(1);
 
+        startScale = player.localScale;
         elapsedTime = 0.0f;
         while (elapsedTime < dur)
         {
-            player.localScale = Vector3.Lerp(player.localScale, regSize, elapsedTime / dur);
+            player.localScale = Vector3.Lerp(startScale, regSize, elapsedTime / dur);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

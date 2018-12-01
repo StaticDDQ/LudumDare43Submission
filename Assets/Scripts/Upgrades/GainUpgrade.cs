@@ -1,16 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GainUpgrade : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private GameObject abilityIcon;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.tag == "Player")
+        {
+            var icon = Instantiate(abilityIcon, collision.transform.position, Quaternion.identity, collision.transform);
+
+            collision.transform.GetChild(0).GetComponent<AbilityManager>().AssignNewAbility(icon.GetComponent<SubGrade>());
+            Destroy(this.gameObject);
+        }
+    }
 }

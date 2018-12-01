@@ -1,31 +1,51 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Dodge : SubGrade
 {
+    [SerializeField] private float speed = 2f;
     private GameObject player;
-    private Animator dodgeAnim;
 
     private bool isDodging = false;
 
     public override void GainAbility()
     {
         player = transform.parent.gameObject;
-        dodgeAnim = GetComponent<Animator>();
     }
 
     public override void RemoveAbility()
     {
-        player.GetComponent<PlayerController>().StopAllCoroutines();
         player.tag = "Player";
-        Destroy(this);
+        player.GetComponent<PlayerController>().SetCanControl(true);
+
+        Destroy(this.gameObject);
     }
 
     public override void UseAbility()
     {
-        if (!player.GetComponent<PlayerController>().GetIsInvulnerable())
+        if (!isDodging)
         {
-            dodgeAnim.Play("Dodged");
-            StartCoroutine(player.GetComponent<PlayerController>().Invulnerable(1f));
+            StartCoroutine(Dodged(1f));
         }
+    }
+
+    private IEnumerator Dodged(float dur)
+    {
+        isDodging = true;
+
+        player.GetComponent<PlayerController>().SetCanControl(false);
+
+        player.tag = "Untagged";
+        float elapsedTime = 0.0f;
+        while(elapsedTime < dur)
+        {
+            player.transform.Rotate(Vector3.forward, speed * Time.deltaTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        player.GetComponent<PlayerController>().SetCanControl(true);
+        player.tag = "Player";
+
+        isDodging = false;
     }
 }

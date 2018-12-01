@@ -20,7 +20,7 @@ public class Blink : SubGrade {
     public override void RemoveAbility()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public override void UseAbility()
@@ -31,22 +31,25 @@ public class Blink : SubGrade {
 
     private IEnumerator Blinking()
     {
-        isBlinking = false;
+        isBlinking = true;
         player.GetComponent<Animator>().Play("Blinked");
         yield return new WaitForSeconds(0.25f);
-        transform.position = (Vector2) mainCam.ScreenToWorldPoint(Input.mousePosition);
+        player.transform.position = (Vector2) mainCam.ScreenToWorldPoint(Input.mousePosition);
         yield return new WaitForSeconds(1f);
-        isBlinking = true;
+        isBlinking = false;
     }
 
     private void Update()
     {
-        float dist = Vector2.Distance(player.transform.position, (Vector2)mainCam.ScreenToWorldPoint(Input.mousePosition));
+        float dist = Vector2.Distance(player.transform.position, mainCam.ScreenToWorldPoint(Input.mousePosition));
+
         if(dist <= maxDist)
         {
+            //indication you can
             canBlink = true;
         } else
         {
+            //indication you cannot
             canBlink = false;
         }
     }

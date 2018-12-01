@@ -1,19 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Collider2D))]
 public class Spike : SubGrade {
-    
-    private Animator spikeAnimator;
+
+    [SerializeField] private Sprite extendedSpike;
+    private Collider2D spikeCollider;
+    private SpriteRenderer sr;
+    private Sprite currSpike;
     private bool animPlaying = false;
 
     public override void GainAbility()
     {
-        spikeAnimator = GetComponent<Animator>();
+        spikeCollider = GetComponent<Collider2D>();
+        sr = GetComponent<SpriteRenderer>();
+        currSpike = sr.sprite;
     }
 
     public override void RemoveAbility()
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public override void UseAbility()
@@ -25,8 +31,11 @@ public class Spike : SubGrade {
     private IEnumerator GenerateSpike()
     {
         animPlaying = true;
-        spikeAnimator.Play("Spiked");
+        sr.sprite = extendedSpike;
+        spikeCollider.enabled = true;
         yield return new WaitForSeconds(2);
+        spikeCollider.enabled = false;
+        sr.sprite = currSpike;
         animPlaying = false;
     }
 }

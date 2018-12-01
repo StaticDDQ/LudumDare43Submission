@@ -2,7 +2,7 @@
 
 public class AbilityManager : MonoBehaviour {
 
-    private SubGrade currAbility;
+    public SubGrade currAbility;
 		
 	// Update is called once per frame
 	private void Update () {
@@ -20,7 +20,7 @@ public class AbilityManager : MonoBehaviour {
         }
     }
 
-    private void AssignNewAbility(SubGrade newAbility)
+    public void AssignNewAbility(SubGrade newAbility)
     {
         if(currAbility != null)
         {

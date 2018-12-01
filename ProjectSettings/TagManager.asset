@@ -7,6 +7,9 @@ TagManager:
   - Bullet
   - Enemy
   - Invulnerable
+  - Spike
+  - Wall
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -18,8 +21,8 @@ TagManager:
   - 
   - Player
   - PlayerBullet
-  - 
-  - 
+  - Enemy
+  - EnemyBullet
   - 
   - 
   - 
