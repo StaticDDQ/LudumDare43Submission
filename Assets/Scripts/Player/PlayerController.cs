@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 
     private Camera cam;
     private Rigidbody2D rigid;
+    private bool isInvulnerable = false;
 
     private void Awake()
     {
@@ -36,10 +38,10 @@ public class PlayerController : MonoBehaviour {
 
     private void ShootProjectile()
     {
-        var bullet = (GameObject)Instantiate(bulletTrail, transform.position + transform.up * 0.9f, transform.rotation);
+        var bullet = Instantiate(bulletTrail, transform.position + transform.up * 0.9f, transform.rotation);
 
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
-        Destroy(bullet, 1.1f);
+        HealthBar.instance.ReduceHealth(2f,true);
     }
 
     private void FixedUpdate()
@@ -53,7 +55,19 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        
+        if(!isInvulnerable && collision.transform.tag == "enemy")
+        {
+            //HealthBar.instance.ReduceHealth(collision.gameObject.GetComponent<EnemyControl>().GetDamage(), false);
+            StartCoroutine(Invulnerable());
+        }
+    }
+
+    private IEnumerator Invulnerable()
+    {
+        isInvulnerable = true;
+        GetComponent<Animator>().Play("invulnerableState");
+        yield return new WaitForSeconds(2);
+        isInvulnerable = false;
     }
 
     // Explode animation, temporary uninteractable for 1 second

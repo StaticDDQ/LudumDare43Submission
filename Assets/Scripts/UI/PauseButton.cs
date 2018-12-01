@@ -3,14 +3,14 @@
 public class PauseButton : MonoBehaviour {
 
     private bool isPaused = false;
-	
-	// Update is called once per frame
-	private void Update () {
+
+    // Update is called once per frame
+    private void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseScreen();
         }
-	}
+    }
 
     private void PauseScreen() {
 
