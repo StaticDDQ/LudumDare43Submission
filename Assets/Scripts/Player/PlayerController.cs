@@ -2,26 +2,29 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(RegularShot))]
 public class PlayerController : MonoBehaviour {
 
+    [SerializeField] private GameObject explodeEffect;
     [SerializeField] private float force;
-    [SerializeField] private float bulletSpeed;
-    [SerializeField] private GameObject bulletTrail;
 
     private Camera cam;
     private Rigidbody2D rigid;
+    private RegularShot shootAbility;
     private bool isInvulnerable = false;
 
     private void Awake()
     {
         cam = Camera.main;
         rigid = GetComponent<Rigidbody2D>();
+        shootAbility = GetComponent<RegularShot>();
     }
 
     private void Update()
     {
         if (Time.timeScale > 0)
         {
+
             Vector3 mousePos = Input.mousePosition;
             mousePos = cam.ScreenToWorldPoint(mousePos);
 
@@ -31,17 +34,9 @@ public class PlayerController : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                ShootProjectile();
+                shootAbility.ShootProjectile();
             }
         }
-    }
-
-    private void ShootProjectile()
-    {
-        var bullet = Instantiate(bulletTrail, transform.position + transform.up * 0.9f, transform.rotation);
-
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
-        HealthBar.instance.ReduceHealth(2f,true);
     }
 
     private void FixedUpdate()
@@ -58,22 +53,29 @@ public class PlayerController : MonoBehaviour {
         if(!isInvulnerable && collision.transform.tag == "enemy")
         {
             //HealthBar.instance.ReduceHealth(collision.gameObject.GetComponent<EnemyControl>().GetDamage(), false);
-            StartCoroutine(Invulnerable());
+            StartCoroutine(Invulnerable(2f));
         }
     }
 
-    private IEnumerator Invulnerable()
+    public IEnumerator Invulnerable(float dur)
     {
         isInvulnerable = true;
+        transform.tag = "Invulnerable";
         GetComponent<Animator>().Play("invulnerableState");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(dur);
+        transform.tag = "Player";
         isInvulnerable = false;
     }
 
     // Explode animation, temporary uninteractable for 1 second
     private void Explode()
     {
-        // Spawn particle system
+        Instantiate(explodeEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    public bool GetIsInvulnerable()
+    {
+        return this.isInvulnerable;
     }
 }

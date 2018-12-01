@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour {
 
+    [SerializeField] GameObject particles;
+    [SerializeField] private GameObject player;
     [SerializeField] private float percentageHealth = 100f;
     [SerializeField] private float recoverSpeed = 0.1f;
     [SerializeField] private float UISpeed = 5;
@@ -66,7 +69,7 @@ public class HealthBar : MonoBehaviour {
 
         if(percentageHealth <= 0.0f)
         {
-            GameOver();
+            StartCoroutine(GameOver());
         }
     }
 
@@ -79,8 +82,12 @@ public class HealthBar : MonoBehaviour {
         }
     }
 
-    private void GameOver()
+    private IEnumerator GameOver()
     {
+        player.GetComponent<Animator>().Play("explodeAnimPlayer");
+        Instantiate(particles, player.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+        Destroy(player);
 
     }
 
