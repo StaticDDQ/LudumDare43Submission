@@ -11,13 +11,9 @@ public class Spike : SubGrade {
         spikeAnimator = GetComponent<Animator>();
     }
 
-    public override bool RemoveAbility()
+    public override void RemoveAbility()
     {
-        if (animPlaying)
-            return false;
-
-        Destroy(this, 0.1f);
-        return true;
+        Destroy(this);
     }
 
     public override void UseAbility()

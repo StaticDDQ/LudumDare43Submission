@@ -17,10 +17,10 @@ public class Blink : SubGrade {
         Cursor.SetCursor(newCursor,Vector2.zero, CursorMode.Auto);
     }
 
-    public override bool RemoveAbility()
+    public override void RemoveAbility()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        return true;
+        Destroy(this);
     }
 
     public override void UseAbility()

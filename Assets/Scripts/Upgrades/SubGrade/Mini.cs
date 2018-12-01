@@ -15,13 +15,12 @@ public class Mini : SubGrade {
         regSize = player.localScale;
     }
 
-    public override bool RemoveAbility()
+    public override void RemoveAbility()
     {
-        if (isUsing)
-            return false;
+        StopAllCoroutines();
+        player.localScale = regSize;
 
-        Destroy(this, 0.1f);
-        return true;
+        Destroy(this);
     }
 
     public override void UseAbility()

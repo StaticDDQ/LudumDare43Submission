@@ -13,12 +13,11 @@ public class Dodge : SubGrade
         dodgeAnim = GetComponent<Animator>();
     }
 
-    public override bool RemoveAbility()
+    public override void RemoveAbility()
     {
-        if (player.GetComponent<PlayerController>().GetIsInvulnerable())
-            return false;
-        Destroy(this, 0.1f);
-        return true;
+        player.GetComponent<PlayerController>().StopAllCoroutines();
+        player.tag = "Player";
+        Destroy(this);
     }
 
     public override void UseAbility()

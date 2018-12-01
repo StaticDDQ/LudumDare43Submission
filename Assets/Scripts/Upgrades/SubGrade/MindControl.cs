@@ -6,7 +6,7 @@ public class MindControl : SubGrade
         throw new System.NotImplementedException();
     }
 
-    public override bool RemoveAbility()
+    public override void RemoveAbility()
     {
         throw new System.NotImplementedException();
     }
