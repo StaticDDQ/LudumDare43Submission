@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] protected float shootInterval = 1f;
 	[SerializeField] protected float maxHealth = 20f;
     [SerializeField] protected float spikedDamage = 5;
+    [SerializeField] protected AudioSource destroyedAudio;
+    [SerializeField] protected AudioSource shootAudio;
 
     protected bool canShoot = true;
     private RegularShot rs;
@@ -24,6 +26,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         if (canShoot)
         {
+            shootAudio.Play();
             rs.ShootProjectile();
         }
     }
@@ -50,7 +53,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         EnemyCounter.instance.SetAmount(-1);
         GetComponent<Animator>().Play("EnemyExplode");
-        GetComponent<AudioSource>().Play();
+        destroyedAudio.Play();
         var effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1f);
         yield return new WaitForSeconds(1);

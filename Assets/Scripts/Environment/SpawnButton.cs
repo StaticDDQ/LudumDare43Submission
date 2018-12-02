@@ -11,7 +11,6 @@ public class SpawnButton : MonoBehaviour {
 	void Start () {
         sr = GetComponent<SpriteRenderer>();
         buttonOff = sr.sprite;
-        AudioManager.instance.PlaySound("spawnStarts");
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +22,7 @@ public class SpawnButton : MonoBehaviour {
             WaveSpawner.instance.StartSpawn();
             Stopwatch.instance.StartTimer();
             RandomDrops.instance.canDrop = true;
+            AudioManager.instance.PlaySound("spawnStarts");
         }
     }
 

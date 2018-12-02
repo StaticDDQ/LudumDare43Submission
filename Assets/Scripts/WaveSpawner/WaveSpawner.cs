@@ -6,7 +6,15 @@ using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour {
 
     public EnemyDifficulty difficulty;
+
     public Text totalRoundsText;
+
+    public Text hpEnemy;
+    public Text atkEnemy;
+    public Text atkPlayer;
+    public Text hpRestore;
+    public Text armorRestore;
+
     public static WaveSpawner instance;
 
     [System.Serializable]
@@ -47,7 +55,14 @@ public class WaveSpawner : MonoBehaviour {
         }
         uniqued = new List<int>();
         finished = new List<int>();
+
         difficulty.ResetMultipliers();
+
+        armorRestore.text = "ARMOR RESTORE DOWN: 0%";
+        hpRestore.text = "HP RESTORE DOWN: 0%";
+        atkEnemy.text = "ENEMY ATK BOOST: 0%";
+        atkPlayer.text = "PLAYER ATK DOWN: 0%";
+        hpEnemy.text = "ENEMY HP BOOST: 0%";
 
         FillList();
     }
@@ -67,13 +82,25 @@ public class WaveSpawner : MonoBehaviour {
 
         if(totalRounds % 12 == 0)
         {
-            difficulty.DamageIncreasedMultiplier += 0.1f;
-            difficulty.DamageReducedMultiplier -= 0.1f;
+            difficulty.ArmorGainReducedMultiplier -= 0.1f;
+            difficulty.HealthGainReducedMultiplier -= 0.1f;
+
+            armorRestore.text = "ARMOR RESTORE DOWN: " + ((int)((1 - difficulty.ArmorGainReducedMultiplier) * 100)).ToString() + "%";
+            hpRestore.text = "HP RESTORE DOWN: " + ((int)((1 - difficulty.HealthGainReducedMultiplier) * 100)).ToString() + "%";
         }  
         if(totalRounds % 6 == 0)
         {
-            difficulty.ArmorGainReducedMultiplier -= 0.1f;
-            difficulty.HealthGainReducedMultiplier -= 0.1f;
+            difficulty.DamageIncreasedMultiplier += 0.05f;
+            difficulty.DamageReducedMultiplier -= 0.05f;
+
+            atkEnemy.text = "ENEMY ATK BOOST: " + ((int)((difficulty.DamageIncreasedMultiplier - 1) * 100)).ToString() + "%";
+            atkPlayer.text = "PLAYER ATK DOWN: " + ((int)((1 - difficulty.DamageReducedMultiplier) * 100)).ToString() + "%";
+        }
+        if(totalRounds % 4 == 0)
+        {
+            difficulty.HealthIncreasedMultiplier += 0.05f;
+
+            hpEnemy.text = "ENEMY HP BOOST: " + ((int)((difficulty.HealthIncreasedMultiplier - 1) * 100)).ToString() + "%";
         }
         
 

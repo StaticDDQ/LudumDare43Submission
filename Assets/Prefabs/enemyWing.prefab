@@ -235,6 +235,8 @@ MonoBehaviour:
   shootInterval: 1
   maxHealth: 20
   spikedDamage: 5
+  destroyedAudio: {fileID: 82383061052826882}
+  shootAudio: {fileID: 0}
   hitDamage: 10
   speed: 15
 --- !u!114 &114270567565592430

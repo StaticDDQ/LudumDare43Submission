@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour {
         if (!playGame)
         {
             playGame = true;
+            AudioManager.instance.StopSound("mainMenu");
             StartCoroutine(SceneFade.instance.LoadLevel(1));
         }
     }

@@ -16,6 +16,7 @@ public class EnemyShooter : EnemyMovement {
     {
         if (canShoot)
         {
+            shootAudio.Play();
             shoot1.ShootProjectile();
             shoot2.ShootProjectile();
             shoot3.ShootProjectile();
