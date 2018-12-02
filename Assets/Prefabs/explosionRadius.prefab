@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fec3881d0342c4c876fa7727665060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lingerTime: 0.5
+  lingerTime: 0.3
   maxRange: 5
   explodeSpeed: 2
   damage: 40

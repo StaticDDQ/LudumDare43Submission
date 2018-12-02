@@ -32,7 +32,6 @@ public class EnemyMovement : MonoBehaviour {
     public void TakeDamage(float amount){
         maxHealth -= amount;
 		if (maxHealth <= 0) {
-            EnemyCounter.instance.SetAmount(-1);
             canShoot = false;
             StartCoroutine(Explode());
         }
@@ -49,6 +48,7 @@ public class EnemyMovement : MonoBehaviour {
     // Explode animation, temporary uninteractable for 1 second
     protected IEnumerator Explode()
     {
+        EnemyCounter.instance.SetAmount(-1);
         GetComponent<Animator>().Play("EnemyExplode");
         var effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1f);

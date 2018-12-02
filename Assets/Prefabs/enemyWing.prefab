@@ -139,7 +139,7 @@ MonoBehaviour:
   maxHealth: 20
   spikedDamage: 5
   hitDamage: 10
-  speed: 10
+  speed: 15
 --- !u!212 &212535597518793500
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 127cd2dda73aa6f45a39dd8a8e515b79, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0

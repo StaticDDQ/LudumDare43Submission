@@ -300,8 +300,8 @@ MonoBehaviour:
   difficulty: {fileID: 11400000, guid: 3e96a351c433683449d061cce1086f62, type: 2}
   explodeEffect: {fileID: 1462214932975440, guid: a94ad596439831b45b06d9cb17007895,
     type: 2}
-  shootInterval: 1
-  maxHealth: 20
+  shootInterval: 0.75
+  maxHealth: 50
   spikedDamage: 5
   shoot1: {fileID: 114244303742107544}
   shoot2: {fileID: 114118742001661726}
@@ -335,9 +335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea9b9e2fe9f4634caf82ee9a55508af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDamage: 10
-  speed: 2
-  rotSpeed: 2
+  hitDamage: 20
+  speed: 8
+  rotSpeed: 5
   minRange: {x: -42, y: -12}
   maxRange: {x: -18, y: 12}
   isHarmful: 1
@@ -375,7 +375,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2781e002d776ac241b591cdc9b4d28cf, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0

@@ -10,8 +10,8 @@ public class HealthGain : MonoBehaviour {
         if(collision.gameObject.tag == "Player")
         {
             HealthBar.instance.RestoreHealth(gainAmount * difficulty.HealthGainReducedMultiplier);
+            RandomDrops.instance.ItemTaken();
+            Destroy(this.gameObject);
         }
-
-        Destroy(this.gameObject);
     }
 }

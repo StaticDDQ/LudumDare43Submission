@@ -20,6 +20,8 @@ public class SpawnButton : MonoBehaviour {
             startSpawning = true;
             sr.sprite = buttonOn;
             WaveSpawner.instance.StartSpawn();
+            Stopwatch.instance.StartTimer();
+            RandomDrops.instance.canDrop = true;
         }
     }
 
@@ -27,5 +29,7 @@ public class SpawnButton : MonoBehaviour {
     {
         startSpawning = false;
         sr.sprite = buttonOff;
+        Stopwatch.instance.StopTimer();
+        RandomDrops.instance.canDrop = false;
     }
 }

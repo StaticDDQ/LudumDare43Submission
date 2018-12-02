@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour {
 
     public EnemyDifficulty difficulty;
+    public Text totalRoundsText;
     public static WaveSpawner instance;
 
     [System.Serializable]
@@ -45,6 +47,7 @@ public class WaveSpawner : MonoBehaviour {
         }
         uniqued = new List<int>();
         finished = new List<int>();
+        difficulty.ResetMultipliers();
 
         FillList();
     }
@@ -60,7 +63,7 @@ public class WaveSpawner : MonoBehaviour {
 
     public void StartSpawn()
     {
-        totalRounds++;
+        totalRoundsText.text = (++totalRounds).ToString();
 
         if(totalRounds % 12 == 0)
         {

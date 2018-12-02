@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitDamage: 10
-  speed: 2
+  speed: 5
   rotSpeed: 5
   minRange: {x: 0, y: 0}
   maxRange: {x: 0, y: 0}

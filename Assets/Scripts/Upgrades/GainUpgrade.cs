@@ -11,6 +11,8 @@ public class GainUpgrade : MonoBehaviour {
             var icon = Instantiate(abilityIcon, collision.transform.position, Quaternion.identity, collision.transform);
 
             collision.transform.GetChild(0).GetComponent<AbilityManager>().AssignNewAbility(icon.GetComponent<SubGrade>());
+
+            RandomDrops.instance.ItemTaken();
             Destroy(this.gameObject);
         }
     }

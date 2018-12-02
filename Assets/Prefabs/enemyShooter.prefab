@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114285591849338912}
   - component: {fileID: 50875557627681510}
   - component: {fileID: 60708053099988632}
+  - component: {fileID: 95311716667873556}
   m_Layer: 10
   m_Name: enemyShooter
   m_TagString: Enemy
@@ -199,6 +200,24 @@ PolygonCollider2D:
       - {x: 0.044999998, y: -1.155}
       - {x: 0.195, y: -1.0649999}
       - {x: 0.195, y: -0.645}
+--- !u!95 &95311716667873556
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265234688556578}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: feb3ab607b90d5747903dbec0248cb44, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114285591849338912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f2d3da7cc607d4db4aaf635677bcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 15
   particle: {fileID: 0}
   isPlayerShooting: 0
   damage: 2
@@ -227,8 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198615f9e5a75824197dc896b747bd52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDamage: 10
-  speed: 4
+  hitDamage: 15
+  speed: 8
   rotSpeed: 100
 --- !u!114 &114447218546281246
 MonoBehaviour:
@@ -244,9 +263,9 @@ MonoBehaviour:
   difficulty: {fileID: 11400000, guid: 3e96a351c433683449d061cce1086f62, type: 2}
   explodeEffect: {fileID: 1462214932975440, guid: a94ad596439831b45b06d9cb17007895,
     type: 2}
-  shootInterval: 1
-  maxHealth: 20
-  spikedDamage: 5
+  shootInterval: 0.75
+  maxHealth: 30
+  spikedDamage: 15
 --- !u!212 &212867246149806302
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -281,7 +300,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bb1c5dbe8177cef45a427d0da02591b8, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0

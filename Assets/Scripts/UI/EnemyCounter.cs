@@ -24,9 +24,8 @@ public class EnemyCounter : MonoBehaviour {
     }
 
     public void SetAmount (int amount) {
-        totalAmount = Mathf.Max(0, totalAmount - amount);
-
-        counterText.text = "ENEMIES LEFT: " + amount;
+        totalAmount = Mathf.Max(0, totalAmount + amount);
+        counterText.text = "ENEMIES LEFT: " + totalAmount;
         if(totalAmount == 0)
         {
             sb.RevertButton();

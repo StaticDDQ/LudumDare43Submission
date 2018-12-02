@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc50f066e1d27b44491bd12bd35c6d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
+  damageAmount: 5
   enemyBullet: 0
   difficulty: {fileID: 11400000, guid: 3e96a351c433683449d061cce1086f62, type: 2}
 --- !u!212 &212015879524457278

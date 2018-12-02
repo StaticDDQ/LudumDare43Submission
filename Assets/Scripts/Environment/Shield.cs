@@ -10,6 +10,7 @@ public class Shield : MonoBehaviour {
         if(collision.gameObject.tag == "Player")
         {
             ShieldBar.instance.GainAmount(shieldGain * difficulty.ArmorGainReducedMultiplier);
+            RandomDrops.instance.ItemTaken();
             Destroy(this.gameObject);
         }
     }

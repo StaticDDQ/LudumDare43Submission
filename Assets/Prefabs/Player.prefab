@@ -117,7 +117,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.0001
   m_LinearDrag: 15
   m_AngularDrag: 12
   m_GravityScale: 0
@@ -183,10 +183,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
-  bulletTrail: {fileID: 1237073950728234, guid: 99b4cbb9f0fae72499d4e033ca7ed15d,
-    type: 2}
+  particle: {fileID: 0}
   isPlayerShooting: 1
   damage: 2
+  bulletTrail: {fileID: 1237073950728234, guid: 99b4cbb9f0fae72499d4e033ca7ed15d,
+    type: 2}
 --- !u!114 &114177743536268502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,7 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9cb4e46d8d3c04ab725e6e043a3541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 2
+  colorSpeed: 15
+  shieldColor: {r: 0, g: 0, b: 0, a: 0}
+  damagedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114555280420676244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f5ec75899eb0b46b249b7d1e9166ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 30
+  force: 0
 --- !u!212 &212229376550262344
 SpriteRenderer:
   m_ObjectHideFlags: 1

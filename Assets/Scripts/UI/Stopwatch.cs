@@ -3,12 +3,22 @@ using UnityEngine.UI;
 
 public class Stopwatch : MonoBehaviour {
 
+    public static Stopwatch instance;
     private Text displayText;
     private float timeAmount;
-    private bool stopTimer = false;
+    private bool stopTimer = true;
 
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
         displayText = GetComponent<Text>();
         timeAmount = 0;
     }
@@ -27,5 +37,10 @@ public class Stopwatch : MonoBehaviour {
     public void StopTimer()
     {
         stopTimer = true;
+    }
+
+    public void StartTimer()
+    {
+        stopTimer = false;
     }
 }
