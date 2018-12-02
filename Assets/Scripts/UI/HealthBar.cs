@@ -26,6 +26,7 @@ public class HealthBar : MonoBehaviour {
             return;
         }
 
+        AudioManager.instance.PlaySound("theme");
         spriteImg = GetComponent<Image>();
     }
 

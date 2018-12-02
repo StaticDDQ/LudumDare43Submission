@@ -8,6 +8,11 @@ public class PauseButton : MonoBehaviour {
     private void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if(!isPaused && Time.timeScale == 0.0f)
+            {
+                return;
+            }
+
             PauseScreen();
         }
     }
@@ -32,6 +37,7 @@ public class PauseButton : MonoBehaviour {
     public void Quit()
     {
         Time.timeScale = 1.0f;
+        AudioManager.instance.StopSound("theme");
         StartCoroutine(SceneFade.instance.LoadLevel(0));
     }
 }

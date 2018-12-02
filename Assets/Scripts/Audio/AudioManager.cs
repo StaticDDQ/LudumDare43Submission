@@ -29,8 +29,6 @@ public class AudioManager : MonoBehaviour {
             clip.source.clip = clip.clip;
             clip.source.loop = clip.isLoop;
         }
-
-        PlaySound("mainMenu");
     }
 
     public void PlaySound(string clipName)

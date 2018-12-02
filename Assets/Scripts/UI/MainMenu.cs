@@ -5,9 +5,9 @@ public class MainMenu : MonoBehaviour {
     private bool playGame = false;
 
 	// Use this for initialization
-	void Awake () {
-        //GetComponent<Animator>().Play();
-	}
+	private void Awake () {
+        AudioManager.instance.PlaySound("mainMenu");
+    }
 	
 	public void PlayGame()
     {
