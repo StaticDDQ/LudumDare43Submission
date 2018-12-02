@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4228230807838542}
   - component: {fileID: 212047006258063298}
   - component: {fileID: 114562091427569672}
+  - component: {fileID: 114933426257814050}
   - component: {fileID: 60390451900848422}
   - component: {fileID: 50962640734868436}
   - component: {fileID: 95845493086011440}
@@ -115,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427173409796976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.834162, y: -2.5544534, z: 0}
+  m_LocalPosition: {x: -20.83, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4244323127537520}
@@ -293,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a738b74ae691e004cbf1df0621e66be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: {fileID: 11400000, guid: 3e96a351c433683449d061cce1086f62, type: 2}
   explodeEffect: {fileID: 1462214932975440, guid: a94ad596439831b45b06d9cb17007895,
     type: 2}
   shootInterval: 1
@@ -317,6 +319,22 @@ MonoBehaviour:
   damage: 2
   bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
     type: 2}
+--- !u!114 &114933426257814050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427173409796976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea9b9e2fe9f4634caf82ee9a55508af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitDamage: 10
+  speed: 2
+  rotSpeed: 2
+  minRange: {x: -42, y: -12}
+  maxRange: {x: -18, y: 12}
 --- !u!212 &212047006258063298
 SpriteRenderer:
   m_ObjectHideFlags: 1

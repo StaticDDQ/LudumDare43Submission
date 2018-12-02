@@ -3,16 +3,15 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyWing : EnemyMovement {
 
-    private Transform target;
-    [SerializeField] protected float hitDamage = 10f;
-    [SerializeField] protected float speed = 2f;
+    [SerializeField] private float hitDamage = 10f;
+    [SerializeField] private float speed = 2f;
     private Rigidbody2D rb;
+    private bool isColliding = false;
 
     // Use this for initialization
     protected override void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -22,14 +21,20 @@ public class EnemyWing : EnemyMovement {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Wall" && target != null)
+        if (!isColliding && collision.transform.tag == "Wall")
         {
-            transform.rotation = Quaternion.LookRotation(transform.forward, target.position - transform.position);
-            print(transform.rotation);
+            transform.Rotate(0, 0, transform.rotation.z + 180 + Random.Range(-45,45));
         }
         else if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(hitDamage);
         }
+
+        isColliding = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isColliding = false;
     }
 }

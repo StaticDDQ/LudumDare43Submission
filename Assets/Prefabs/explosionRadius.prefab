@@ -71,7 +71,7 @@ MonoBehaviour:
   lingerTime: 0.5
   maxRange: 5
   explodeSpeed: 2
-  damage: 10
+  damage: 40
 --- !u!212 &212345657155298926
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -2,7 +2,8 @@
 
 public class EnemyBomb : MonoBehaviour {
 
-    [SerializeField] private float timer = 5f;
+    private float timer;
+    [SerializeField] private GameObject explosionEffect;
     [SerializeField] private GameObject explosion;
     [SerializeField] private Color minColor;
     [SerializeField] private Color maxColor;
@@ -12,6 +13,7 @@ public class EnemyBomb : MonoBehaviour {
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        timer = Random.Range(10, 15);
     }
 
     private void Update()
@@ -34,7 +36,8 @@ public class EnemyBomb : MonoBehaviour {
             {
                 hasExploded = true;
                 Instantiate(explosion, transform.position, Quaternion.identity);
-                StartCoroutine(Camera.main.GetComponent<CameraShake>().ShakeCamera());
+                Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                Camera.main.GetComponent<CameraShake>().DoShake();
                 Destroy(gameObject);
             }
         }

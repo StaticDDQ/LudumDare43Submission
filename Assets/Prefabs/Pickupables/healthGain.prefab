@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8731b628559e8144d89cacf8843357f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: {fileID: 11400000, guid: 3e96a351c433683449d061cce1086f62, type: 2}
   gainAmount: 10
 --- !u!212 &212233329401187394
 SpriteRenderer:

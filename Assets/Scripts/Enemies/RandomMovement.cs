@@ -10,6 +10,7 @@ public class RandomMovement : FollowTarget {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        SetRandomPosition();
 	}
 
     private void SetRandomPosition()
@@ -21,29 +22,25 @@ public class RandomMovement : FollowTarget {
 	
 	// Update is called once per frame
 	private void FixedUpdate () {
-        if (targetPoint == null)
-            SetRandomPosition();
-        else
-        {
-            Vector2 dir = targetPoint - rb.position;
 
-            dir.Normalize();
+        Vector2 dir = targetPoint - rb.position;
 
-            float rotAmount = Vector3.Cross(dir, transform.up).z;
-            rb.angularVelocity = -rotAmount * rotSpeed;
+        dir.Normalize();
 
-            rb.velocity = transform.up * speed;
+        float rotAmount = Vector3.Cross(dir, transform.up).z;
+        rb.angularVelocity = -rotAmount * rotSpeed;
+
+        rb.velocity = transform.up * speed;
 
         if (Vector2.Distance(transform.position, targetPoint) < 1)
-            {
-                SetRandomPosition();
-            }
+        {
+            SetRandomPosition();
         }
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Wall" && targetPoint != null)
+        if (collision.transform.tag == "Wall")
         {
             transform.rotation = Quaternion.LookRotation(transform.forward, targetPoint - (Vector2)transform.position);
         }

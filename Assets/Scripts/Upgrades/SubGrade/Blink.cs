@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Blink : SubGrade {
 
+    [SerializeField] private GameObject blinkEffect;
     [SerializeField] private float maxDist = 2f;
     [SerializeField] private Texture2D newCursor;
+    [SerializeField] private Texture2D failCursor;
     private GameObject player;
     private Camera mainCam;
     private bool canBlink = true;
@@ -34,6 +36,7 @@ public class Blink : SubGrade {
         isBlinking = true;
         player.GetComponent<Animator>().Play("Blinked");
         yield return new WaitForSeconds(0.25f);
+        Instantiate(blinkEffect, player.transform.position, Quaternion.identity);
         player.transform.position = (Vector2) mainCam.ScreenToWorldPoint(Input.mousePosition);
         yield return new WaitForSeconds(1f);
         isBlinking = false;
@@ -45,11 +48,11 @@ public class Blink : SubGrade {
 
         if(dist <= maxDist)
         {
-            //indication you can
+            Cursor.SetCursor(newCursor, Vector2.zero, CursorMode.Auto);
             canBlink = true;
         } else
         {
-            //indication you cannot
+            Cursor.SetCursor(failCursor, Vector2.zero, CursorMode.Auto);
             canBlink = false;
         }
     }

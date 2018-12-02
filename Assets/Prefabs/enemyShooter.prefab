@@ -211,10 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
-    type: 2}
   isPlayerShooting: 0
   damage: 2
+  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
+    type: 2}
 --- !u!114 &114403234306863360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,7 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198615f9e5a75824197dc896b747bd52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4853545802543854, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
   hitDamage: 10
   speed: 4
   rotSpeed: 100
@@ -241,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3704d7fd22ece61499ae22cad4a07205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: {fileID: 11400000, guid: 3e96a351c433683449d061cce1086f62, type: 2}
   explodeEffect: {fileID: 1462214932975440, guid: a94ad596439831b45b06d9cb17007895,
     type: 2}
   shootInterval: 1

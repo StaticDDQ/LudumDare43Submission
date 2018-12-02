@@ -4,7 +4,7 @@ public class Projectile : MonoBehaviour {
 
     [SerializeField] private float damageAmount = 10f;
     [SerializeField] private bool enemyBullet = false;
-    [SerializeField] private EnemyDifficulty difficulty;
+    public EnemyDifficulty difficulty;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -35,7 +35,7 @@ public class Dodge : SubGrade
 
         player.GetComponent<PlayerController>().SetCanControl(false);
 
-        player.tag = "Untagged";
+        player.layer = 12;
         float elapsedTime = 0.0f;
         while(elapsedTime < dur)
         {
@@ -44,7 +44,7 @@ public class Dodge : SubGrade
             yield return null;
         }
         player.GetComponent<PlayerController>().SetCanControl(true);
-        player.tag = "Player";
+        player.layer = 8;
 
         isDodging = false;
     }

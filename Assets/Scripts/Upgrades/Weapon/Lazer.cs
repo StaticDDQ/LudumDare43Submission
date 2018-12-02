@@ -12,6 +12,4 @@ public class Lazer : RegularShot {
             Destroy(l, 0.25f);
         }
     }
-
-    
 }

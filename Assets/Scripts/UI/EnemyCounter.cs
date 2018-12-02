@@ -21,7 +21,6 @@ public class EnemyCounter : MonoBehaviour {
         }
 
         counterText = GetComponent<Text>();
-        SetAmount(0);
     }
 
     public void SetAmount (int amount) {
