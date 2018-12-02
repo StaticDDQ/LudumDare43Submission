@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour {
 
-    [SerializeField] GameObject particles;
+    [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] private GameObject particles;
     [SerializeField] private GameObject player;
     [SerializeField] private float percentageHealth = 100f;
     [SerializeField] private float recoverSpeed = 0.1f;
@@ -86,9 +87,10 @@ public class HealthBar : MonoBehaviour {
     {
         player.GetComponent<Animator>().Play("explodeAnimPlayer");
         Instantiate(particles, player.transform.position, Quaternion.identity);
+        GameOverScreen.SetActive(true);
         yield return new WaitForSeconds(1);
         Destroy(player);
-
+        Time.timeScale = 0f;
     }
 
     public float GetHealthAmount()

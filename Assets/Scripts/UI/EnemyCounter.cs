@@ -24,7 +24,7 @@ public class EnemyCounter : MonoBehaviour {
     }
 
     public void SetAmount (int amount) {
-        totalAmount += amount;
+        totalAmount = Mathf.Max(0, totalAmount - amount);
 
         counterText.text = "ENEMIES LEFT: " + amount;
         if(totalAmount == 0)

@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 60708053099988632}
   m_Layer: 10
   m_Name: enemyShooter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
+  particle: {fileID: 0}
   isPlayerShooting: 0
   damage: 2
   bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
@@ -245,6 +246,7 @@ MonoBehaviour:
     type: 2}
   shootInterval: 1
   maxHealth: 20
+  spikedDamage: 5
 --- !u!212 &212867246149806302
 SpriteRenderer:
   m_ObjectHideFlags: 1

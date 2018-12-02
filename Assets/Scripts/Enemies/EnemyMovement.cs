@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour {
     public void TakeDamage(float amount){
         maxHealth -= amount;
 		if (maxHealth <= 0) {
-
+            EnemyCounter.instance.SetAmount(-1);
             canShoot = false;
             StartCoroutine(Explode());
         }

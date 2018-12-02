@@ -13,4 +13,10 @@ public class GameOver : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void ExitGame()
+    {
+        Time.timeScale = 1.0f;
+        StartCoroutine(SceneFade.instance.LoadLevel(0));
+    }
 }

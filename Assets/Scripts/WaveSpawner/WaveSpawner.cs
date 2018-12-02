@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class WaveSpawner : MonoBehaviour {
 
+    public EnemyDifficulty difficulty;
     public static WaveSpawner instance;
 
     [System.Serializable]
@@ -19,16 +20,18 @@ public class WaveSpawner : MonoBehaviour {
     [System.Serializable]
     public class Spawner
     {
-        public GameObject spawnPoint;
-        public Animator gate;
-        public Image indicator;
+        public Transform spawnPoint;
+        public Animator indicator;
     }
     public Spawner[] spawnOrigins;
 
-    public bool startSpawning = false;
-    private bool currentlySpawning = false;
-
     private int nextWave = 0;
+    private int spawnAmount = 1;
+    private int miniRound = 0;
+    private int totalRounds = 0;
+
+    private List<int> uniqued;
+    private List<int> finished;
 
     private void Awake()
     {
@@ -40,38 +43,79 @@ public class WaveSpawner : MonoBehaviour {
             Destroy(gameObject);
             return;
         }
+        uniqued = new List<int>();
+        finished = new List<int>();
+
+        FillList();
     }
 
-    private void Update()
+    private void FillList()
     {
-        if(startSpawning && !currentlySpawning)
+        for (int i = 0; i < spawnOrigins.Length; i++)
         {
-            currentlySpawning = true;
-            StartCoroutine(StartSpawning(waves[nextWave]));
+            uniqued.Add(i);
+        }
+        finished.Clear();
+    }
 
-        } else if(startSpawning && currentlySpawning)
+    public void StartSpawn()
+    {
+        totalRounds++;
+
+        if(totalRounds % 12 == 0)
         {
+            difficulty.DamageIncreasedMultiplier += 0.1f;
+            difficulty.DamageReducedMultiplier -= 0.1f;
+        }  
+        if(totalRounds % 6 == 0)
+        {
+            difficulty.ArmorGainReducedMultiplier -= 0.1f;
+            difficulty.HealthGainReducedMultiplier -= 0.1f;
+        }
+        
 
+        for(int i = 0; i < spawnAmount; i++)
+        {
+            int rand = uniqued[Random.Range(0, uniqued.Count)];
+            finished.Add(rand);
+            uniqued.Remove(rand);
+
+            StartCoroutine(StartSpawning(waves[nextWave++], rand));
+        }
+
+        FillList();
+
+        miniRound++;
+        if(miniRound == 4)
+        {
+            miniRound = 0;
+            if (spawnAmount == 3)
+                spawnAmount = 1;
+            else
+                spawnAmount++;
+        }
+
+        if(totalRounds > 4)
+        {
+            nextWave = Random.Range(0, waves.Length);
         }
     }
 
-    private IEnumerator StartSpawning(Wave wave)
+    private IEnumerator StartSpawning(Wave wave, int spawnerPoint)
     {
+        spawnOrigins[spawnerPoint].indicator.Play("ArrowPopUp");
         EnemyCounter.instance.SetAmount(wave.count);
         for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy(wave.enemy);
+            SpawnEnemy(wave.enemy, spawnerPoint);
             yield return new WaitForSeconds(wave.delay);
         }
-
-        startSpawning = false;
-        currentlySpawning = false;
 
         yield break;
     }
 
-    private void SpawnEnemy(Transform enemy)
+    private void SpawnEnemy(Transform enemy, int spawnerNum)
     {
-
+        Instantiate(enemy, spawnOrigins[spawnerNum].spawnPoint.position, spawnOrigins[spawnerNum].spawnPoint.parent.rotation);
     }
 }

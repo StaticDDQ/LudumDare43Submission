@@ -8,7 +8,10 @@ public class FollowPlayer : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        Vector3 newPos = player.position + offset;
-        transform.position = Vector3.Lerp(transform.position, newPos, Time.deltaTime * smooth);
+        if(player != null)
+        {
+            Vector3 newPos = player.position + offset;
+            transform.position = Vector3.Lerp(transform.position, newPos, Time.deltaTime * smooth);
+        }
     }
 }

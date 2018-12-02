@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 95708293362967494}
   m_Layer: 10
   m_Name: enemyWing
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
     type: 2}
   shootInterval: 1
   maxHealth: 20
+  spikedDamage: 5
   hitDamage: 10
   speed: 10
 --- !u!212 &212535597518793500
