@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4279375335838058}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: Sword
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 212736685042045078}
   - component: {fileID: 114529732536694330}
   - component: {fileID: 60867269268651130}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -35,7 +35,6 @@ public class FollowTarget : MonoBehaviour {
         if (collision.transform.tag == "Wall" && target != null)
         {
             transform.rotation = Quaternion.LookRotation(transform.forward, target.position - transform.position);
-            print(transform.rotation);
         }
         else if (collision.gameObject.tag == "Player")
         {

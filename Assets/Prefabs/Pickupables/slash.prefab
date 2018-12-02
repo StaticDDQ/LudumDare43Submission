@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 0
+  particle: {fileID: 1713419275667436, guid: a83f24bbf7142484f92fd43ef7220ef0, type: 2}
   isPlayerShooting: 1
   damage: 2
   bulletTrail: {fileID: 1321320636642062, guid: 3774232f1882c57468309c189a0bc421,

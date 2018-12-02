@@ -36,7 +36,8 @@ public class Blink : SubGrade {
         isBlinking = true;
         player.GetComponent<Animator>().Play("Blinked");
         yield return new WaitForSeconds(0.25f);
-        Instantiate(blinkEffect, player.transform.position, Quaternion.identity);
+        var effect = Instantiate(blinkEffect, player.transform.position, Quaternion.identity);
+        Destroy(effect, 0.4f);
         player.transform.position = (Vector2) mainCam.ScreenToWorldPoint(Input.mousePosition);
         yield return new WaitForSeconds(1f);
         isBlinking = false;

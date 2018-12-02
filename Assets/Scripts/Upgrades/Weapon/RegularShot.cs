@@ -3,7 +3,7 @@
 public class RegularShot : MonoBehaviour {
 
     public float bulletSpeed;
-    [SerializeField] protected GameObject particle;
+    public GameObject particle;
     [SerializeField] protected bool isPlayerShooting = true;
     public float damage = 2f;
     public GameObject bulletTrail;

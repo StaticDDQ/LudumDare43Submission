@@ -37,8 +37,7 @@ public class ShieldBar : MonoBehaviour {
     public void LoseAmount(float amount)
     {
         this.shieldAmount = Mathf.Max(0, shieldAmount - amount);
-        if(this.shieldAmount > 0)
-            sa.TookDamage(this.shieldAmount);
+        sa.TookDamage(this.shieldAmount);
     }
 
     public float GetShieldAmount()

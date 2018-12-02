@@ -9,9 +9,10 @@ public class Bomb : RegularShot {
     {
         if (canShoot)
         {
-            Instantiate(particle, transform.position, transform.rotation);
+            var effect = Instantiate(particle, transform.position + transform.up * 0.5f, transform.rotation, transform);
             base.ShootProjectile();
             StartCoroutine(Cooldown());
+            Destroy(effect, 0.5f);
         }
     }
 

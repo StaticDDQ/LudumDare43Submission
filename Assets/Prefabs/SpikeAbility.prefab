@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212134209470611650}
   - component: {fileID: 114451519165026140}
   - component: {fileID: 58252262335896308}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpikeAbility
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438e80bd720e33647be5abd632c36fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: {x: 0, y: 0}
   extendedSpike: {fileID: 21300000, guid: 2c8f6274da89981408851c0b70f5fb0b, type: 3}
 --- !u!212 &212134209470611650
 SpriteRenderer:
