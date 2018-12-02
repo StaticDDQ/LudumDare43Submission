@@ -70,7 +70,12 @@ public class HealthBar : MonoBehaviour {
 
         if(percentageHealth <= 0.0f)
         {
+            AudioManager.instance.PlaySound("playerDestroyed");
             StartCoroutine(GameOver());
+        }
+        else
+        {
+            AudioManager.instance.PlaySound("gettingHit");
         }
     }
 

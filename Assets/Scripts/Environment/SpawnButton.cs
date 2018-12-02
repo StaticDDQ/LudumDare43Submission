@@ -11,6 +11,7 @@ public class SpawnButton : MonoBehaviour {
 	void Start () {
         sr = GetComponent<SpriteRenderer>();
         buttonOff = sr.sprite;
+        AudioManager.instance.PlaySound("spawnStarts");
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)

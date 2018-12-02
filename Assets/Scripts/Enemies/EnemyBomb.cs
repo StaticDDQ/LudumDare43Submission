@@ -9,6 +9,7 @@ public class EnemyBomb : MonoBehaviour {
     [SerializeField] private Color maxColor;
     private SpriteRenderer sr;
     private bool hasExploded = false;
+    private bool hasPlayedAudio = false;
 
     private void Start()
     {
@@ -24,6 +25,11 @@ public class EnemyBomb : MonoBehaviour {
 
             if (timer < 2)
             {
+                if (!hasPlayedAudio)
+                {
+                    GetComponent<AudioSource>().Play();
+                    hasPlayedAudio = true;
+                }
                 sr.color = Color.Lerp(sr.color, maxColor, Time.deltaTime * 5f);
             } else
             {

@@ -10,6 +10,7 @@ public class Shield : MonoBehaviour {
         if(collision.gameObject.tag == "Player")
         {
             ShieldBar.instance.GainAmount(shieldGain * difficulty.ArmorGainReducedMultiplier);
+            AudioManager.instance.PlaySound("gainArmor"); 
             RandomDrops.instance.ItemTaken();
             Destroy(this.gameObject);
         }
