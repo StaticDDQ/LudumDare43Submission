@@ -14,6 +14,10 @@ public class RandomDrops : MonoBehaviour {
     [SerializeField] private float weaponFreq = 10;
     [SerializeField] private int maxCapacity = 5;
     private int currCapacity = 0;
+    private GameObject sur;
+    private GameObject abt;
+    private GameObject wpn;
+
     public bool canDrop = false;
 
     // Use this for initialization
@@ -41,33 +45,51 @@ public class RandomDrops : MonoBehaviour {
 
 	public void SpawnSurvival()
     {
+        if(sur != null)
+        {
+            Destroy(sur);
+            currCapacity--;
+        }
+
         if(canDrop && currCapacity < maxCapacity)
         {
             Vector2 newPos = GenerateRandomPoint();
             GameObject obj = survival[Random.Range(0, survival.Count)];
-            Instantiate(obj, newPos, Quaternion.identity);
+            sur = Instantiate(obj, newPos, Quaternion.identity);
             currCapacity++;
         }
     }
 
     public void SpawnAbility()
     {
+        if(abt != null)
+        {
+            Destroy(abt);
+            currCapacity--;
+        }
+
         if (canDrop && currCapacity < maxCapacity)
         {
             Vector2 newPos = GenerateRandomPoint();
             GameObject obj = abilityDrop[Random.Range(0, abilityDrop.Count)];
-            Instantiate(obj, newPos, Quaternion.identity);
+            abt = Instantiate(obj, newPos, Quaternion.identity);
             currCapacity++;
         }
     }
 
     public void SpawnWeapon()
     {
+        if(wpn != null)
+        {
+            Destroy(wpn);
+            currCapacity--;
+        }
+
         if (canDrop && currCapacity < maxCapacity)
         {
             Vector2 newPos = GenerateRandomPoint();
             GameObject obj = weaponDrops[Random.Range(0, weaponDrops.Count)];
-            Instantiate(obj, newPos, Quaternion.identity);
+            wpn = Instantiate(obj, newPos, Quaternion.identity);
             currCapacity++;
         }
     }

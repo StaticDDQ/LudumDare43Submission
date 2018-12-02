@@ -33,11 +33,12 @@ public class FollowTarget : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Wall" && target != null)
+        Collider2D cd = collision.contacts[0].collider;
+        if (cd.tag == "Wall" && target != null)
         {
             transform.rotation = Quaternion.LookRotation(transform.forward, target.position - transform.position);
         }
-        else if (collision.gameObject.tag == "Player")
+        else if (cd.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(hitDamage);
         }

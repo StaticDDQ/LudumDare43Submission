@@ -74,7 +74,7 @@ public class HealthBar : MonoBehaviour {
             AudioManager.instance.PlaySound("playerDestroyed");
             StartCoroutine(GameOver());
         }
-        else
+        else if(!fromPlayer)
         {
             AudioManager.instance.PlaySound("gettingHit");
         }

@@ -44,12 +44,12 @@ public class RandomMovement : FollowTarget {
     {
         if (!hasCollided)
         {
-            if (collision.transform.tag == "Wall")
+            Collider2D cd = collision.contacts[0].collider;
+            if (cd.tag == "Wall")
             {
-                transform.Rotate(0, 0, transform.rotation.z + 180);
                 transform.rotation = Quaternion.LookRotation(transform.forward, targetPoint - (Vector2)transform.position);
             }
-            else if (isHarmful && collision.gameObject.tag == "Player")
+            else if (isHarmful && cd.tag == "Player")
             {
                 collision.gameObject.GetComponent<PlayerController>().TakeDamage(hitDamage);
             }

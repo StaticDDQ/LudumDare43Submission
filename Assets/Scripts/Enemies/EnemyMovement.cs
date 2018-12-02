@@ -34,7 +34,7 @@ public class EnemyMovement : MonoBehaviour {
     // Play explode animation when health reaches to 0
     public void TakeDamage(float amount){
         maxHealth -= amount;
-		if (maxHealth <= 0) {
+		if (maxHealth <= 0 && canShoot) {
             canShoot = false;
             StartCoroutine(Explode());
         }
@@ -42,7 +42,8 @@ public class EnemyMovement : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Spike")
+        Collider2D cd = collision.contacts[0].collider;
+        if (cd.tag == "Spike")
         {
             TakeDamage(spikedDamage * difficulty.DamageReducedMultiplier);
         }

@@ -43,6 +43,12 @@ public class WaveSpawner : MonoBehaviour {
     private List<int> uniqued;
     private List<int> finished;
 
+    private int armorRestorePercent = 0;
+    private int hpRestorePercent = 0;
+    private int atkEnemyPercent = 0;
+    private int atkPlayerPercent = 0;
+    private int hpEnemyPercent = 0;
+
     private void Awake()
     {
         if(instance == null)
@@ -58,11 +64,13 @@ public class WaveSpawner : MonoBehaviour {
 
         difficulty.ResetMultipliers();
 
-        armorRestore.text = "ARMOR RESTORE DOWN: 0%";
-        hpRestore.text = "HP RESTORE DOWN: 0%";
-        atkEnemy.text = "ENEMY ATK BOOST: 0%";
-        atkPlayer.text = "PLAYER ATK DOWN: 0%";
-        hpEnemy.text = "ENEMY HP BOOST: 0%";
+        armorRestorePercent = 0;
+        hpRestorePercent = 0;
+        atkEnemyPercent = 0;
+        atkPlayerPercent = 0;
+        hpEnemyPercent = 0;
+
+        SetText();
 
         FillList();
     }
@@ -76,6 +84,15 @@ public class WaveSpawner : MonoBehaviour {
         finished.Clear();
     }
 
+    private void SetText()
+    {
+        armorRestore.text = "ARMOR RESTORE DOWN: " + armorRestorePercent + "%";
+        hpRestore.text = "HP RESTORE DOWN: " + hpRestorePercent + "%";
+        atkEnemy.text = "ENEMY ATK BOOST: " + atkEnemyPercent + "%";
+        atkPlayer.text = "PLAYER ATK DOWN: " + atkPlayerPercent + "%";
+        hpEnemy.text = "ENEMY HP BOOST: " + hpEnemyPercent + "%";
+    }
+
     public void StartSpawn()
     {
         totalRoundsText.text = (++totalRounds).ToString();
@@ -84,23 +101,23 @@ public class WaveSpawner : MonoBehaviour {
         {
             difficulty.ArmorGainReducedMultiplier -= 0.1f;
             difficulty.HealthGainReducedMultiplier -= 0.1f;
-
-            armorRestore.text = "ARMOR RESTORE DOWN: " + ((int)((1 - difficulty.ArmorGainReducedMultiplier) * 100)).ToString() + "%";
-            hpRestore.text = "HP RESTORE DOWN: " + ((int)((1 - difficulty.HealthGainReducedMultiplier) * 100)).ToString() + "%";
+            armorRestorePercent += 10;
+            hpRestorePercent += 10;
+            SetText();
         }  
         if(totalRounds % 6 == 0)
         {
             difficulty.DamageIncreasedMultiplier += 0.05f;
             difficulty.DamageReducedMultiplier -= 0.05f;
-
-            atkEnemy.text = "ENEMY ATK BOOST: " + ((int)((difficulty.DamageIncreasedMultiplier - 1) * 100)).ToString() + "%";
-            atkPlayer.text = "PLAYER ATK DOWN: " + ((int)((1 - difficulty.DamageReducedMultiplier) * 100)).ToString() + "%";
+            atkEnemyPercent += 5;
+            atkPlayerPercent += 5;
+            SetText();
         }
         if(totalRounds % 4 == 0)
         {
             difficulty.HealthIncreasedMultiplier += 0.05f;
-
-            hpEnemy.text = "ENEMY HP BOOST: " + ((int)((difficulty.HealthIncreasedMultiplier - 1) * 100)).ToString() + "%";
+            hpEnemyPercent += 5;
+            SetText();
         }
         
 

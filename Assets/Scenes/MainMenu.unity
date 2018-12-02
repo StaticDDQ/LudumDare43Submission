@@ -673,6 +673,11 @@ Prefab:
       propertyPath: clips.Array.data[5].pitch
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114802138112973100, guid: f1da269305243284ea95cc74aa97c720,
+        type: 2}
+      propertyPath: clips.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 14853fa4c8f4847419baf860140ad10a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1da269305243284ea95cc74aa97c720, type: 2}
   m_IsPrefabAsset: 0
