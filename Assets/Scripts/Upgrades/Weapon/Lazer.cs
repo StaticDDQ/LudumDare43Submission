@@ -1,17 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Lazer : RegularShot {
 
-    [SerializeField] private GameObject lazerObj;
-    private bool isFiring = false;
+    private GameObject l;
 
     public override void ShootProjectile()
     {
-        if (!isFiring)
+        if(l == null)
         {
-            isFiring = true;
-
+            l = Instantiate(bulletTrail, transform.position + transform.up * 0.75f, transform.rotation, transform);
+            Destroy(l, 0.25f);
         }
     }
 

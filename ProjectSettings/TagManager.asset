@@ -10,6 +10,7 @@ TagManager:
   - Spike
   - Wall
   - EnemyBullet
+  - EnemyWing
   layers:
   - Default
   - TransparentFX

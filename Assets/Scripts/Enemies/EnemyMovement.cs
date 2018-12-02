@@ -3,15 +3,18 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
+    [SerializeField] protected EnemyDifficulty difficulty;
     [SerializeField] protected GameObject explodeEffect;
     [SerializeField] protected float shootInterval = 1f;
 	[SerializeField] protected float maxHealth = 20f;
+
     protected bool canShoot = true;
     private RegularShot rs;
 
     // Initialize sprite and health
 	protected virtual void Start(){
         rs = GetComponent<RegularShot>();
+        maxHealth *= difficulty.HealthIncreasedMultiplier;
 
         InvokeRepeating("FireShot", 1f, shootInterval);
 	}
@@ -37,7 +40,7 @@ public class EnemyMovement : MonoBehaviour {
     // Explode animation, temporary uninteractable for 1 second
     protected IEnumerator Explode()
     {
-        GetComponent<Animator>().Play("explodeAnimEnemy");
+        GetComponent<Animator>().Play("EnemyExplode");
         Instantiate(explodeEffect, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(1);
         Destroy(gameObject);

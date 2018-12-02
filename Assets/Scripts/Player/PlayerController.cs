@@ -78,4 +78,13 @@ public class PlayerController : MonoBehaviour {
     {
         this.canControl = control;
     }
+
+    public void ReplaceWeapon(RegularShot weapon, float selfDamage, float bulletSpeed, GameObject bulletPrefab)
+    {
+        Destroy(shootAbility);
+        shootAbility = gameObject.AddComponent(weapon.GetType()) as RegularShot;
+        shootAbility.bulletSpeed = bulletSpeed;
+        shootAbility.bulletTrail = bulletPrefab;
+        shootAbility.damage = selfDamage;
+    }
 }

@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 114562091427569672}
   - component: {fileID: 60390451900848422}
   - component: {fileID: 50962640734868436}
+  - component: {fileID: 95845493086011440}
   m_Layer: 10
   m_Name: enemySplit
   m_TagString: Enemy
@@ -114,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427173409796976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.97, y: 0, z: 0}
+  m_LocalPosition: {x: -27.834162, y: -2.5544534, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4244323127537520}
@@ -215,6 +216,24 @@ PolygonCollider2D:
       - {x: 1.225, y: -0.555}
       - {x: 1.225, y: 0.555}
       - {x: 0.555, y: 1.225}
+--- !u!95 &95845493086011440
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427173409796976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 767b0367ff3043841acb5ade4de4e37d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114118742001661726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,10 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
-    type: 2}
   isPlayerShooting: 0
   damage: 2
+  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
+    type: 2}
 --- !u!114 &114164825297278178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,10 +262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
-    type: 2}
   isPlayerShooting: 0
   damage: 2
+  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
+    type: 2}
 --- !u!114 &114244303742107544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,10 +278,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
-    type: 2}
   isPlayerShooting: 0
   damage: 2
+  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
+    type: 2}
 --- !u!114 &114562091427569672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,7 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a738b74ae691e004cbf1df0621e66be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeEffect: {fileID: 0}
+  explodeEffect: {fileID: 1462214932975440, guid: a94ad596439831b45b06d9cb17007895,
+    type: 2}
   shootInterval: 1
   maxHealth: 20
   shoot1: {fileID: 114244303742107544}
@@ -293,10 +313,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
-  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
-    type: 2}
   isPlayerShooting: 0
   damage: 2
+  bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
+    type: 2}
 --- !u!212 &212047006258063298
 SpriteRenderer:
   m_ObjectHideFlags: 1

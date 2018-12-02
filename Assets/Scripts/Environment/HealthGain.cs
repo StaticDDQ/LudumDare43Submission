@@ -2,13 +2,14 @@
 
 public class HealthGain : MonoBehaviour {
 
+    [SerializeField] private EnemyDifficulty difficulty;
     [SerializeField] private float gainAmount = 10f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            HealthBar.instance.RestoreHealth(gainAmount);
+            HealthBar.instance.RestoreHealth(gainAmount * difficulty.HealthGainReducedMultiplier);
         }
 
         Destroy(this.gameObject);

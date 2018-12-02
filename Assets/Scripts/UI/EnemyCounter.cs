@@ -3,18 +3,34 @@ using UnityEngine.UI;
 
 public class EnemyCounter : MonoBehaviour {
 
+    public static EnemyCounter instance;
+    [SerializeField] private SpawnButton sb;
     private Text counterText;
+    private int totalAmount = 0;
 
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         counterText = GetComponent<Text>();
         SetAmount(0);
     }
 
     public void SetAmount (int amount) {
-        if (amount > 0)
-            counterText.text = "ENEMIES LEFT: " + amount;
-        else
-            counterText.text = "ENEMIES LEFT: CLEARED";
+        totalAmount += amount;
+
+        counterText.text = "ENEMIES LEFT: " + amount;
+        if(totalAmount == 0)
+        {
+            sb.RevertButton();
+        }
 	}
 }

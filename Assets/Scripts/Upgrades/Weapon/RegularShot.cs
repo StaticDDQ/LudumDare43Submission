@@ -2,10 +2,10 @@
 
 public class RegularShot : MonoBehaviour {
 
-    [SerializeField] protected float bulletSpeed;
-    [SerializeField] protected GameObject bulletTrail;
+    public float bulletSpeed;
     [SerializeField] protected bool isPlayerShooting = true;
-    [SerializeField] protected float damage = 2f;
+    public float damage = 2f;
+    public GameObject bulletTrail;
 
     public virtual void ShootProjectile()
     {

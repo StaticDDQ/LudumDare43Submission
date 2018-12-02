@@ -3,15 +3,15 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class FollowTarget : MonoBehaviour {
 
-    protected Transform target;
+    private Transform target;
     [SerializeField] protected float hitDamage = 10f;
     [SerializeField] protected float speed = 2f;
-    [SerializeField] private float rotSpeed = 2f;
+    [SerializeField] protected float rotSpeed = 2f;
 
     protected Rigidbody2D rb;
 
-	// Use this for initialization
-	protected void Start () {
+    // Use this for initialization
+    private void Start () {
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
 	}
@@ -30,7 +30,7 @@ public class FollowTarget : MonoBehaviour {
         rb.velocity = transform.up * speed;
 	}
 
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Wall" && target != null)
         {

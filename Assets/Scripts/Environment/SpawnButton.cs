@@ -19,7 +19,7 @@ public class SpawnButton : MonoBehaviour {
         {
             startSpawning = true;
             sr.sprite = buttonOn;
-            //SpawnManager.StartSpawning();
+            WaveSpawner.instance.startSpawning = true;
         }
     }
 

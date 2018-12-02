@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 60901210041111942}
   - component: {fileID: 50117192379419868}
   - component: {fileID: 114068984024847560}
+  - component: {fileID: 95708293362967494}
   m_Layer: 10
   m_Name: enemyWing
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588100621989186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.41, y: 0, z: 0}
+  m_LocalPosition: {x: -32.87063, y: -2.4426432, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,6 +103,24 @@ PolygonCollider2D:
       - {x: 1.225, y: -0.885}
       - {x: 1.225, y: -0.465}
       - {x: 0.715, y: 0.085}
+--- !u!95 &95708293362967494
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588100621989186}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5e1a1c9aa94dad4fb35561d2a6cc594, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114068984024847560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1100fe12d45e0c64c952d0556cefe63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4853545802543854, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
   hitDamage: 10
   speed: 10
   rotSpeed: 1

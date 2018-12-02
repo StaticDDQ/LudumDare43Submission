@@ -2,13 +2,14 @@
 
 public class Shield : MonoBehaviour {
 
-    [SerializeField] private float shieldGain = 10f;
+    [SerializeField] private EnemyDifficulty difficulty;
+    [SerializeField] private int shieldGain = 10;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            ShieldBar.instance.GainAmount(shieldGain);
+            ShieldBar.instance.GainAmount(shieldGain * difficulty.ArmorGainReducedMultiplier);
             Destroy(this.gameObject);
         }
     }

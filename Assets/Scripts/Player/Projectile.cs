@@ -2,18 +2,19 @@
 
 public class Projectile : MonoBehaviour {
 
-    private float damageAmount = 10f;
+    [SerializeField] private float damageAmount = 10f;
     [SerializeField] private bool enemyBullet = false;
+    [SerializeField] private EnemyDifficulty difficulty;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!enemyBullet && collision.gameObject.tag == "Enemy")
         {
-            //apply damage
+            collision.gameObject.GetComponent<EnemyMovement>().TakeDamage(damageAmount * difficulty.DamageReducedMultiplier);
         }
         else if (enemyBullet && collision.gameObject.tag == "Player")
         {
-
+            collision.gameObject.GetComponent<PlayerController>().TakeDamage(damageAmount * difficulty.DamageIncreasedMultiplier);
         }
 
         Destroy(gameObject);

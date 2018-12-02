@@ -7,6 +7,7 @@ public class EnemyBomb : MonoBehaviour {
     [SerializeField] private Color minColor;
     [SerializeField] private Color maxColor;
     private SpriteRenderer sr;
+    private bool hasExploded = false;
 
     private void Start()
     {
@@ -29,8 +30,13 @@ public class EnemyBomb : MonoBehaviour {
         }
         else
         {
-            Instantiate(explosion, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            if (!hasExploded)
+            {
+                hasExploded = true;
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                StartCoroutine(Camera.main.GetComponent<CameraShake>().ShakeCamera());
+                Destroy(gameObject);
+            }
         }
     }
 }
