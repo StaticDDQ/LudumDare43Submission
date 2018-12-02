@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50117192379419868}
   - component: {fileID: 114068984024847560}
   - component: {fileID: 95708293362967494}
+  - component: {fileID: 114270567565592430}
   m_Layer: 10
   m_Name: enemyWing
   m_TagString: Enemy
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588100621989186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.10355, y: 0.09840348, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -140,6 +141,23 @@ MonoBehaviour:
   spikedDamage: 5
   hitDamage: 10
   speed: 15
+--- !u!114 &114270567565592430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588100621989186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 1, g: 0, b: 0, a: 1}
+  glowBrightness: 1.5
+  outlineWidth: 1
+  alphaThreshold: 0.1
+  drawOutside: 0
+  enableInstancing: 1
 --- !u!212 &212535597518793500
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -155,7 +173,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

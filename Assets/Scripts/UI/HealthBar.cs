@@ -34,7 +34,7 @@ public class HealthBar : MonoBehaviour {
 
         if(percentageHealth < 100)
         {
-            spriteImg.color = Color.blue;
+            spriteImg.color = Color.cyan;
             fullHealth = false;
         } else
         {

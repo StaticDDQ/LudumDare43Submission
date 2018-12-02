@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 50262645457507560}
   - component: {fileID: 58961826339104442}
   - component: {fileID: 95724336059564588}
+  - component: {fileID: 114941244207790552}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -86,8 +87,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1233249900692842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.25, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4729612634209268}
   m_RootOrder: 0
@@ -117,9 +118,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 15
-  m_AngularDrag: 12
+  m_Mass: 0.3
+  m_LinearDrag: 20
+  m_AngularDrag: 20
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -140,7 +141,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.225
+  m_Radius: 1.1
 --- !u!95 &95724336059564588
 Animator:
   serializedVersion: 3
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f2d3da7cc607d4db4aaf635677bcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 10
+  bulletSpeed: 15
   particle: {fileID: 0}
   isPlayerShooting: 1
   damage: 2
@@ -200,8 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeed: 15
-  shieldColor: {r: 0, g: 0, b: 0, a: 0}
-  damagedColor: {r: 0, g: 0, b: 0, a: 0}
+  shieldColor: {r: 1, g: 1, b: 1, a: 0.50980395}
+  damagedColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0.50980395}
 --- !u!114 &114555280420676244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,7 +214,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f5ec75899eb0b46b249b7d1e9166ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0
+  force: 30
+--- !u!114 &114941244207790552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1916787366343442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0, g: 0.9500494, b: 1, a: 1}
+  glowBrightness: 1.5
+  outlineWidth: 7
+  alphaThreshold: 0.1
+  drawOutside: 0
+  enableInstancing: 0
 --- !u!212 &212229376550262344
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -229,7 +247,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

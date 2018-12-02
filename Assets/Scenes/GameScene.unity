@@ -390,7 +390,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4412911285974382, guid: 7589aafb70610cd4182ef8ffed85bd6a, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1435861079795370, guid: 7589aafb70610cd4182ef8ffed85bd6a, type: 2}
       propertyPath: m_Name
@@ -702,148 +702,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4853545802543854, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
       propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 58961826339104442, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: rotSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 212669704847047432, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743393889140276, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743393889140276, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743393889140276, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 212669704847047432, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212669704847047432, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212669704847047432, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212669704847047432, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: shieldColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: shieldColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: shieldColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: shieldColor.a
-      value: 0.50980395
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: damagedColor.r
-      value: 0.5471698
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: damagedColor.g
-      value: 0.5471698
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: damagedColor.b
-      value: 0.5471698
-      objectReference: {fileID: 0}
-    - target: {fileID: 114177743536268502, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: damagedColor.a
-      value: 0.50980395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4853545802543854, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58961826339104442, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 212229376550262344, guid: 2421f7d187b471c4085026bf76156a20,
         type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212229376550262344, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.67825866
-      objectReference: {fileID: 0}
-    - target: {fileID: 212229376550262344, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212229376550262344, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114555280420676244, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: force
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 50262645457507560, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_Mass
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 50262645457507560, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114123729771710152, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: bulletSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 50262645457507560, guid: 2421f7d187b471c4085026bf76156a20,
-        type: 2}
-      propertyPath: m_LinearDrag
-      value: 30
+      propertyPath: m_Materials.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2421f7d187b471c4085026bf76156a20, type: 2}
@@ -1542,6 +1406,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1620,6 +1485,18 @@ Transform:
   m_Father: {fileID: 1245835551}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: ee853c451ec5d8542899b5ded8471dfd, type: 2}
 --- !u!1 &596643393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1599,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186d9a75e6b09614bb8af45af7903b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips: []
+  clips:
+  - clipName: bombExplosion
+    clip: {fileID: 8300000, guid: a140d00597737fa46a2ff3b4c590988a, type: 3}
+    volume: 0.075
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: bombTicking
+    clip: {fileID: 8300000, guid: 162d86d06c9e4db4a8ad346ab4f14f5c, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: destroyed
+    clip: {fileID: 8300000, guid: d09fbd871aa13554d99a662d73d6487d, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: enemyShoot
+    clip: {fileID: 8300000, guid: b3fb17d1266a8174fa49b0a8f333ab27, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: gainArmor
+    clip: {fileID: 8300000, guid: 636edfd4549fbfb4f8f0549716105e11, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: gainHealth
+    clip: {fileID: 8300000, guid: f1ffdff16e9324a4fb7864ddf5346cbb, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: gettingHit
+    clip: {fileID: 8300000, guid: 726560881f8783c4492b1810ab5470b6, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: mainMenu
+    clip: {fileID: 8300000, guid: 166702692117ea442b81c854408fbb88, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: spawnStarts
+    clip: {fileID: 8300000, guid: 3630e3e1ae4c6f149bf8d2a71e01a872, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
+  - clipName: buttonClick
+    clip: {fileID: 8300000, guid: 7ed1433f759dd404fb1ca3c92aff88a7, type: 3}
+    volume: 0
+    pitch: 0
+    isLoop: 0
+    source: {fileID: 0}
 --- !u!4 &599290498
 Transform:
   m_ObjectHideFlags: 0
@@ -1866,7 +1803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScreen: {fileID: 1232771700}
   particles: {fileID: 1435861079795370, guid: 7589aafb70610cd4182ef8ffed85bd6a, type: 2}
-  player: {fileID: 0}
+  player: {fileID: 1906925786}
   percentageHealth: 100
   recoverSpeed: 0.1
   UISpeed: 5
@@ -3183,7 +3120,7 @@ Transform:
   m_Children:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1245835552
 MonoBehaviour:
@@ -3243,7 +3180,7 @@ Transform:
   - {fileID: 26069154}
   - {fileID: 1852100777}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270291237
 GameObject:
@@ -4293,6 +4230,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1906925786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1916787366343442, guid: 2421f7d187b471c4085026bf76156a20,
+    type: 2}
+  m_PrefabInternal: {fileID: 208111582}
 --- !u!1 &1929654162
 GameObject:
   m_ObjectHideFlags: 0
@@ -4988,7 +4930,7 @@ MonoBehaviour:
   - name: Split
     enemy: {fileID: 4228230807838542, guid: a74da7f8e7a816e4bbbe93eec3dd860e, type: 2}
     count: 1
-    delay: 1
+    delay: 2
   - name: Bomb
     enemy: {fileID: 4527774310549620, guid: 2594af74882af90489f6359603902f5f, type: 2}
     count: 1
@@ -4999,8 +4941,8 @@ MonoBehaviour:
     delay: 2
   - name: FlyingMore
     enemy: {fileID: 4362002635953838, guid: 5b85fd2d749e7124ea742515a0b937f6, type: 2}
-    count: 4
-    delay: 1
+    count: 3
+    delay: 2
   - name: Splits
     enemy: {fileID: 4228230807838542, guid: a74da7f8e7a816e4bbbe93eec3dd860e, type: 2}
     count: 2
@@ -5037,7 +4979,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2065773299
 GameObject:

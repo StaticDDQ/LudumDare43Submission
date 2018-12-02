@@ -50,6 +50,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         EnemyCounter.instance.SetAmount(-1);
         GetComponent<Animator>().Play("EnemyExplode");
+
         var effect = Instantiate(explodeEffect, transform.position, Quaternion.identity);
         Destroy(effect, 1f);
         yield return new WaitForSeconds(1);

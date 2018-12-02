@@ -17,6 +17,7 @@ public class FollowTarget : MonoBehaviour {
 	}
 	
 	private void FixedUpdate () {
+        
         if(target != null)
         {
             Vector2 dir = (Vector2)target.position - rb.position;
