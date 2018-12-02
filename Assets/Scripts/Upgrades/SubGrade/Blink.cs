@@ -39,7 +39,7 @@ public class Blink : SubGrade {
         var effect = Instantiate(blinkEffect, player.transform.position, Quaternion.identity);
         Destroy(effect, 0.4f);
         player.transform.position = (Vector2) mainCam.ScreenToWorldPoint(Input.mousePosition);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         isBlinking = false;
     }
 

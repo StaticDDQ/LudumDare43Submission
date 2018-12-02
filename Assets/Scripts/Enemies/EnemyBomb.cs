@@ -37,6 +37,7 @@ public class EnemyBomb : MonoBehaviour {
                 hasExploded = true;
                 Instantiate(explosion, transform.position, Quaternion.identity);
                 Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                EnemyCounter.instance.SetAmount(-1);
                 Camera.main.GetComponent<CameraShake>().DoShake();
                 Destroy(gameObject);
             }

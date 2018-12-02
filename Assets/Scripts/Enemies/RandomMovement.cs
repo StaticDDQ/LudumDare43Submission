@@ -34,7 +34,7 @@ public class RandomMovement : FollowTarget {
 
         rb.velocity = transform.up * speed;
 
-        if (Vector2.Distance(transform.position, targetPoint) < 1)
+        if (Vector2.Distance(transform.position, targetPoint) < 5f)
         {
             SetRandomPosition();
         }
@@ -47,6 +47,7 @@ public class RandomMovement : FollowTarget {
             if (collision.transform.tag == "Wall")
             {
                 transform.Rotate(0, 0, transform.rotation.z + 180);
+                transform.rotation = Quaternion.LookRotation(transform.forward, targetPoint - (Vector2)transform.position);
             }
             else if (isHarmful && collision.gameObject.tag == "Player")
             {
