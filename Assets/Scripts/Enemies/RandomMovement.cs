@@ -5,7 +5,9 @@ public class RandomMovement : FollowTarget {
 
     [SerializeField] private Vector2 minRange;
     [SerializeField] private Vector2 maxRange;
+    [SerializeField] private bool isHarmful = true;
     private Vector2 targetPoint;
+    private bool hasCollided = false;
 
 	// Use this for initialization
 	void Start () {
@@ -40,13 +42,23 @@ public class RandomMovement : FollowTarget {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Wall")
+        if (!hasCollided)
         {
-            transform.rotation = Quaternion.LookRotation(transform.forward, targetPoint - (Vector2)transform.position);
+            if (collision.transform.tag == "Wall")
+            {
+                transform.Rotate(0, 0, transform.rotation.z + 180);
+            }
+            else if (isHarmful && collision.gameObject.tag == "Player")
+            {
+                collision.gameObject.GetComponent<PlayerController>().TakeDamage(hitDamage);
+            }
         }
-        else if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerController>().TakeDamage(hitDamage);
-        }
+
+        hasCollided = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        hasCollided = false;
     }
 }

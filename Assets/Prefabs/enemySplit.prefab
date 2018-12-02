@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
+  particle: {fileID: 0}
   isPlayerShooting: 0
   damage: 2
   bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
@@ -263,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
+  particle: {fileID: 0}
   isPlayerShooting: 0
   damage: 2
   bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
@@ -279,6 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
+  particle: {fileID: 0}
   isPlayerShooting: 0
   damage: 2
   bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
@@ -299,6 +302,7 @@ MonoBehaviour:
     type: 2}
   shootInterval: 1
   maxHealth: 20
+  spikedDamage: 5
   shoot1: {fileID: 114244303742107544}
   shoot2: {fileID: 114118742001661726}
   shoot3: {fileID: 114640423038045922}
@@ -315,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 20
+  particle: {fileID: 0}
   isPlayerShooting: 0
   damage: 2
   bulletTrail: {fileID: 1066989092981754, guid: 1cec527f6fb56144ab1a1d5d3a688aad,
@@ -335,6 +340,7 @@ MonoBehaviour:
   rotSpeed: 2
   minRange: {x: -42, y: -12}
   maxRange: {x: -18, y: 12}
+  isHarmful: 1
 --- !u!212 &212047006258063298
 SpriteRenderer:
   m_ObjectHideFlags: 1
